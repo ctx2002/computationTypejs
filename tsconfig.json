@@ -9,10 +9,13 @@
 	"strictNullChecks": true
   },
   "include": [
-        "src/**/*"
+        "src/**/*", "cmd.ts"
     ],
   "exclude": [
 	"node_modules",
 	"**/*.spec.ts"
-  ]
+  ],
+  "mocha.requires": [
+	"ts-node/register"
+   ],
 }

@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
-    "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
+    "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test",
+    "test-single": "mocha -r ts-node/register",
+    "test-watch": "mocha -r ts-node/register -R list -w tests/**/*.test.ts"
   },
+
   "author": "",
   "license": "ISC",
   "devDependencies": {
