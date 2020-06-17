@@ -1,4 +1,4 @@
-import {gcd, ex_gcd , isPrime, factor} from "../src/NumberTheory"
+import {gcd, ex_gcd , isPrime, factor, findInitailValueOfDiophantine} from "../src/NumberTheory"
 
 let expect = require('chai').expect;
 
@@ -64,43 +64,57 @@ describe('NumberTheory', function() {
         it('factor test 3', function() {
             let r = factor(3)
         
-            expect([3]).to.eql([3]); // passes
+            expect(r).to.eql([3]); // passes
         });
 
         it('factor test 4', function() {
             let r = factor(4)
         
-            expect([2, 2]).to.eql([2, 2]); // passes
+            expect(r).to.eql([2, 2]); // passes
         });
 
         it('factor test 103', function() {
             let r = factor(103)
         
-            expect([103]).to.eql([103]); // passes
+            expect(r).to.eql([103]); // passes
         });
 
         it('factor test 25', function() {
             let r = factor(25)
         
-            expect([5, 5]).to.eql([5, 5]); // passes
+            expect(r).to.eql([5, 5]); // passes
         });
 
         it('factor test 10', function() {
             let r = factor(10)
-        
-            expect([2, 5]).to.eql([2, 5]); // passes
+            expect(r).to.eql([2, 5]); // passes
         });
 
         it('factor test 256', function() {
             let r = factor(256)
         
-            expect([2, 2, 2,2,2,2,2,2]).to.eql([2, 2, 2,2,2,2,2,2]); // passes
+            expect(r).to.eql([2, 2, 2,2,2,2,2,2]); // passes
         });
 
         it('factor test 10934', function() {
             let r = factor(10934)
         
-            expect([2, 7,11,71]).to.eql([2, 7,11,71]); // passes
+            expect(r).to.eql([2, 7,11,71]); // passes
+        });
+    });
+    //findInitailValueOfDiophantine
+    describe('#findInitailValueOfDiophantine', function() {
+        it('findInitailValueOfDiophantine test 258x + 354y = 1', function() {
+            let r = findInitailValueOfDiophantine(258, 354, 18);
+        
+            expect(r).to.eql([33, -24]); // passes
+        });
+
+        it('findInitailValueOfDiophantine test 23x + 17y = 1', function() {
+            //
+            let r = findInitailValueOfDiophantine(23, 17, 1);
+        
+            expect(r).to.eql([3, -4]); // passes
         });
     });
 });
